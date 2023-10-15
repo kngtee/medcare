@@ -8,14 +8,15 @@ const Login = () => {
   });
 
   const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
   return (
     <section className="px-5 lg:px-0">
       <div className="w-full max-w-[570px] mx-auto rounded-lg shadow-lg md:p-10">
         <h3 className="text-headingColor text-[22px] text-center leading-9 font-bold mb-10">
-          Hello!!! <span className="text-primaryColor">Welcome</span> Back
+          Hello!!! <span className="text-primaryColor">Welcome</span> Back{" "}
           &#x1F389;
         </h3>
         <form className="py-4 md:py-0">
@@ -53,7 +54,7 @@ const Login = () => {
           </div>
 
           <p className="mt-5 text-textColor text-center">
-            Don&apos;t have and account?{" "}
+            Don&apos;t have an account?{" "}
             <Link to="/register" className="text-primaryColor font-medium ml-1">
               Register
             </Link>
